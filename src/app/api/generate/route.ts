@@ -24,10 +24,11 @@ export async function POST(req: NextRequest) {
             model: "llama-3.1-8b-instant",
         });
 
-        console.log(completion.choices[0]?.message?.content);
+        const messageContent = completion.choices[0]?.message?.content || "";
+        console.log("Generated cover letter:", messageContent);
 
         return NextResponse.json({
-            result: completion.choices[0]?.message?.content || "",
+            result: messageContent,
         });
     } catch (error: any) {
         console.error("An error occurred:", error);

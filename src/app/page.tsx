@@ -80,7 +80,7 @@ export default function Home() {
                     />
                 </div>
                 <div>
-                    <label
+                    <div
                         {...getRootProps()}
                         className="block p-4 border-2 border-dashed rounded cursor-pointer"
                     >
@@ -93,7 +93,7 @@ export default function Home() {
                                 select file
                             </p>
                         )}
-                    </label>
+                    </div>
                     {resume && <p className="mt-2">File: {resume.name}</p>}
                 </div>
                 <button

@@ -89,7 +89,7 @@ export default function Home() {
                             <p>Drop the resume here ...</p>
                         ) : (
                             <p>
-                                Drag 'n' drop your resume here, or click to
+                                Drag and drop your resume here, or click to
                                 select file
                             </p>
                         )}

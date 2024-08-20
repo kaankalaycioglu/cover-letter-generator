@@ -31,7 +31,13 @@ export async function POST(req: NextRequest) {
             result: messageContent,
         });
     } catch (error: any) {
-        console.error("An error occurred:", error);
+        if (error instanceof Groq.APIError) {
+            console.log(error.status); // 400
+            console.log(error.name); // BadRequestError
+            console.log(error.headers); // {server: 'nginx', ...}
+        } else {
+            console.error("Error generating cover letter:", error);
+        }
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
